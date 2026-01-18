@@ -15,7 +15,6 @@ public class CameraMove : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("aa");
         if (left)
             //rotaciona o target de forma instantanea, mas com a pacote Cinemachine, a camera acompanha
             //esse objeto (target) de forma suave ate chegar a posicao dele.
