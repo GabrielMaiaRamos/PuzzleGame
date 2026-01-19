@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 public class CameraMove : MonoBehaviour
 
 {
-    [Header("Setas")]
+    [Header("Objetos das Setas")]
     [SerializeField] GameObject ArrowLeft;
     [SerializeField] GameObject ArrowRight;
     [SerializeField] GameObject ArrowUp;
@@ -29,24 +29,13 @@ public class CameraMove : MonoBehaviour
     {
         if (timer >= 1.5)
         {
-            Change();
+            ChangeRotation();
             timer = 0;
         }
     }
-    private void Change()
-    {
-        if (left)
-            //rotaciona o target de forma instantanea, mas com a pacote Cinemachine, a camera acompanha
-            //esse objeto (target) de forma suave ate chegar a posicao dele.
-            camTarget.transform.Rotate(0, -90, 0, Space.World);
-        else if (right)
-            camTarget.transform.Rotate(0, 90, 0, Space.World);
-        else if (up)
-            camTarget.transform.Rotate(-90, 0, 0, Space.Self);
-        else if (down)
-            camTarget.transform.Rotate(90, 0, 0, Space.Self);
 
-        Debug.Log(camTarget.transform.eulerAngles.x);
+    private void ChangeVisibleArrows()
+    {
         if (camTarget.transform.eulerAngles.x > 265 && camTarget.transform.eulerAngles.x < 285)
         {
             ArrowLeft.SetActive(false);
@@ -66,5 +55,25 @@ public class CameraMove : MonoBehaviour
             ArrowUp.SetActive(true);
             ArrowDown.SetActive(true);
         }
+    }
+    private void ChangeRotation()
+    {
+        if (left)
+            //rotaciona o target de forma instantanea, mas com a pacote Cinemachine, a camera acompanha
+            //esse objeto (target) de forma suave ate chegar a posicao dele.
+            camTarget.transform.Rotate(0, -90, 0, Space.World);
+        else if (right)
+            camTarget.transform.Rotate(0, 90, 0, Space.World);
+        else if (up)
+        {
+            camTarget.transform.Rotate(-90, 0, 0, Space.Self);
+            ChangeVisibleArrows();
+        }
+        else if (down)
+        {
+            camTarget.transform.Rotate(90, 0, 0, Space.Self);
+            ChangeVisibleArrows();
+        }
+
     }
 }
