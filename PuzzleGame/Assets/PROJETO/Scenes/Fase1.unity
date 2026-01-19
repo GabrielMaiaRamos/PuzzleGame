@@ -1104,7 +1104,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1017291818}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.3, y: 0, z: 0}
 --- !u!114 &745119374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,7 +1550,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1017291818}
-  m_LocalEulerAnglesHint: {x: 17.5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.12, y: 0, z: 0}
 --- !u!114 &837397061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1913,7 +1913,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f49e9bac91a02b4e83d719effc7050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
-  cam: {fileID: 749076721}
+  ArrowLeft: {fileID: 2111093226}
+  ArrowRight: {fileID: 1531954041}
+  ArrowUp: {fileID: 1021799103}
+  ArrowDown: {fileID: 1431397052}
+  camTarget: {fileID: 749076721}
   left: 0
   right: 0
   up: 1
@@ -2537,7 +2541,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f49e9bac91a02b4e83d719effc7050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
-  cam: {fileID: 749076721}
+  ArrowLeft: {fileID: 2111093226}
+  ArrowRight: {fileID: 1531954041}
+  ArrowUp: {fileID: 1021799103}
+  ArrowDown: {fileID: 1431397052}
+  camTarget: {fileID: 749076721}
   left: 0
   right: 0
   up: 0
@@ -2798,7 +2806,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f49e9bac91a02b4e83d719effc7050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
-  cam: {fileID: 749076721}
+  ArrowLeft: {fileID: 2111093226}
+  ArrowRight: {fileID: 1531954041}
+  ArrowUp: {fileID: 1021799103}
+  ArrowDown: {fileID: 1431397052}
+  camTarget: {fileID: 749076721}
   left: 0
   right: 1
   up: 0
@@ -4253,7 +4265,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f49e9bac91a02b4e83d719effc7050c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMove
-  cam: {fileID: 749076721}
+  ArrowLeft: {fileID: 2111093226}
+  ArrowRight: {fileID: 1531954041}
+  ArrowUp: {fileID: 1021799103}
+  ArrowDown: {fileID: 1431397052}
+  camTarget: {fileID: 749076721}
   left: 1
   right: 0
   up: 0
