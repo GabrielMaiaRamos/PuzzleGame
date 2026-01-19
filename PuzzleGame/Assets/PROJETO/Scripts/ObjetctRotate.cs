@@ -7,16 +7,19 @@ public class ObjetctRotate : MonoBehaviour
     {
         if (context.performed)
         {
-            if (open)
+            if (GameData.door_level_1)
             {
-                gameObject.transform.Rotate(0, 110, 0);
-                open = false;
-            }
-            else
-            {
-                gameObject.transform.Rotate(0, -110, 0);
-                open = true;
-            }
+                if (open)
+                {
+                    gameObject.transform.Rotate(0, 110, 0);
+                    open = false;
+                }
+                else
+                {
+                    gameObject.transform.Rotate(0, -110, 0);
+                    open = true;
+                }
+                }
         }
     }
 }
