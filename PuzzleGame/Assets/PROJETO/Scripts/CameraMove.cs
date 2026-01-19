@@ -12,8 +12,21 @@ public class CameraMove : MonoBehaviour
     [SerializeField] bool right;
     [SerializeField] bool up;
     [SerializeField] bool down;
+    private float timer = 0;
+    void Update()
+    {
+        timer += Time.deltaTime;
+    }
 
     public void OnClick()
+    {
+        if (timer >= 1)
+        {
+            muda();
+            timer = 0;
+        }
+    }
+    private void muda()
     {
         if (left)
             //rotaciona o target de forma instantanea, mas com a pacote Cinemachine, a camera acompanha
