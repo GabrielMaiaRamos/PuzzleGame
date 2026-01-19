@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class ArrowPosition : MonoBehaviour
 {
+    [Header("Direcao das Setas")]
     [SerializeField] bool left;
     [SerializeField] bool right;
     [SerializeField] bool up;
     [SerializeField] bool down;
-    void Update()
+
+    void FixedUpdate()
     {
         if (left)
         {
