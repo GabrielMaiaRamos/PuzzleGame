@@ -1,0 +1,1 @@
+//logica dos objetos / coletaveis
