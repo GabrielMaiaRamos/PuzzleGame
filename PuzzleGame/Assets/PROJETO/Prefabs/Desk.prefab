@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3594116224705568392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3421395033373730567}
+  m_Layer: 0
+  m_Name: DeskViewe
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3421395033373730567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594116224705568392}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.9305171, y: -0, z: -0, w: -0.3662486}
+  m_LocalPosition: {x: 0.048529416, y: 0.41249967, z: 2.480001}
+  m_LocalScale: {x: 0.1470588, y: 0.6590662, z: 0.72322136}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1362782258011101732}
+  m_LocalEulerAnglesHint: {x: 47.031, y: 0, z: 0}
 --- !u!1 &4850973935706723838
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,7 +65,8 @@ Transform:
   m_LocalPosition: {x: -1.94, y: 3.15, z: 5.24}
   m_LocalScale: {x: 6.8, y: 2.4, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3421395033373730567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!114 &1805343984940658096
@@ -5229,7 +5261,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 672
+  m_VersionIndex: 678
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -5350,5 +5382,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Furnitures
   ObjectName: Desk
   CamTarget: {fileID: 0}
-  PointValue: {fileID: 0}
+  PointValue: {fileID: 3421395033373730567}
   itemsIn: []

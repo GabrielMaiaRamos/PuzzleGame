@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteracts : MonoBehaviour
 {
+    [Header("Target da Camera")]
+    [SerializeField] GameObject camTarget;
     void FixedUpdate()
     {
         //se apertar o botao esquerdo em qualquer momento:
@@ -22,6 +24,16 @@ public class PlayerInteracts : MonoBehaviour
                     item.OnInteract();
                 }
             }
+        }
+    }
+    public void ReturnEsc()
+    {
+        if (GameData.IsInCenter == false)
+        {
+            //quaternion.identity eh a forma de zerar os angulos da rotacao, indo pra "(0,0,0)"
+            GameData.IsInCenter = true;
+            camTarget.transform.SetPositionAndRotation(GameData.CenterPointTarget, Quaternion.identity);
+            Camera.main.GetComponent<CameraMove>().ChangeVisibleArrows(0);
         }
     }
 }

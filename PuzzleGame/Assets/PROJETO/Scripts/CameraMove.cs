@@ -14,66 +14,70 @@ public class CameraMove : MonoBehaviour
     [Header("Target da Camera")]
 
     [SerializeField] GameObject camTarget;
-    [Header("Direcoes de Rotacao")]
-    [SerializeField] bool left;
-    [SerializeField] bool right;
-    [SerializeField] bool up;
-    [SerializeField] bool down;
+
     private float timer = 0;
     void FixedUpdate()
     {
         timer += Time.deltaTime;
     }
 
-    public void OnClick()
+    public void ChangeVisibleArrows(float occasion)
     {
-        if (timer >= 1.5)
+        //so consegue mexer nas setas SE a camera estiver no centro
+        if (GameData.IsInCenter)
         {
-            ChangeRotation();
-            timer = 0;
+            if (occasion > 265 && occasion < 285)
+            {
+                ArrowLeft.SetActive(false);
+                ArrowRight.SetActive(false);
+                ArrowUp.SetActive(false);
+            }
+            else if (occasion > 85 && occasion < 95)
+            {
+                ArrowLeft.SetActive(false);
+                ArrowRight.SetActive(false);
+                ArrowDown.SetActive(false);
+            }
+            else
+            {
+                ArrowLeft.SetActive(true);
+                ArrowRight.SetActive(true);
+                ArrowUp.SetActive(true);
+                ArrowDown.SetActive(true);
+            }
         }
-    }
-
-    private void ChangeVisibleArrows()
-    {
-        if (camTarget.transform.eulerAngles.x > 265 && camTarget.transform.eulerAngles.x < 285)
+        else
         {
             ArrowLeft.SetActive(false);
             ArrowRight.SetActive(false);
             ArrowUp.SetActive(false);
-        }
-        else if (camTarget.transform.eulerAngles.x > 85 && camTarget.transform.eulerAngles.x < 95)
-        {
-            ArrowLeft.SetActive(false);
-            ArrowRight.SetActive(false);
             ArrowDown.SetActive(false);
         }
-        else
-        {
-            ArrowLeft.SetActive(true);
-            ArrowRight.SetActive(true);
-            ArrowUp.SetActive(true);
-            ArrowDown.SetActive(true);
-        }
     }
-    private void ChangeRotation()
-    {
-        if (left)
-            //rotaciona o target de forma instantanea, mas com a pacote Cinemachine, a camera acompanha
-            //esse objeto (target) de forma suave ate chegar a posicao dele.
-            camTarget.transform.Rotate(0, -90, 0, Space.World);
-        else if (right)
-            camTarget.transform.Rotate(0, 90, 0, Space.World);
-        else if (up)
-        {
-            camTarget.transform.Rotate(-90, 0, 0, Space.Self);
-            ChangeVisibleArrows();
-        }
-        else if (down)
-        {
-            camTarget.transform.Rotate(90, 0, 0, Space.Self);
-            ChangeVisibleArrows();
-        }
 
+    //rotaciona o target de forma instantanea, mas com a pacote Cinemachine, a camera acompanha
+    //esse objeto (target) de forma suave ate chegar a posicao dele.
+    public void ChangeRotation(string direction)
+    {
+        if (timer >= 1.2)
+        {
+            if (direction == "left")
+                camTarget.transform.Rotate(0, -90, 0, Space.World);
+            else if (direction == "right")
+                camTarget.transform.Rotate(0, 90, 0, Space.World);
+
+            else if (direction == "up")
+            {
+                camTarget.transform.Rotate(-90, 0, 0, Space.Self);
+                ChangeVisibleArrows(camTarget.transform.eulerAngles.x);
+            }
+            else if (direction == "down")
+            {
+                camTarget.transform.Rotate(90, 0, 0, Space.Self);
+                ChangeVisibleArrows(camTarget.transform.eulerAngles.x);
+            }
+
+            timer = 0;
+        }
     }
 }
