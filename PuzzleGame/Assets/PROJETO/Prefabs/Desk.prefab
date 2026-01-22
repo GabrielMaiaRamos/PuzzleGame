@@ -5381,6 +5381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Furnitures
   ObjectName: Desk
+  MainCam: {fileID: 0}
   CamTarget: {fileID: 0}
   PointValue: {fileID: 3421395033373730567}
   itemsIn: []

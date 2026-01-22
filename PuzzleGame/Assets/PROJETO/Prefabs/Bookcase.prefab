@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 3421991816395325560}
   - component: {fileID: 2551894376620859205}
   - component: {fileID: 8912075841758353551}
+  - component: {fileID: 8096725541753570867}
+  - component: {fileID: 1079970028788148977}
   m_Layer: 0
-  m_Name: Estante
+  m_Name: Bookcase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,13 +31,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3137841527771257091}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -5, z: 4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 3.611, y: 1.7841448, z: 5.05}
+  m_LocalScale: {x: 2.8194282, y: 5.1366, z: 5.1365995}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1279753920904155714}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &2279262836201180623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,19 +1091,11 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2754
+  m_VersionIndex: 2721
   m_IsSelectable: 1
-  m_SelectedFaces: 13000000
-  m_SelectedEdges:
-  - a: 76
-    b: 77
-  - a: 78
-    b: 76
-  - a: 77
-    b: 79
-  - a: 79
-    b: 78
-  m_SelectedVertices: 4c0000004d0000004e0000004f000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &2393180326236274645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1203,3 +1198,72 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &8096725541753570867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137841527771257091}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4922708, y: 0.6884565, z: 0.69714344}
+  m_Center: {x: 0.2538649, y: -0.0031113923, z: 0.0009925368}
+--- !u!114 &1079970028788148977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137841527771257091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ff762d66aea50c4c90df94765cfdfe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Furnitures
+  ObjectName: Boockcase
+  MainCam: {fileID: 0}
+  CamTarget: {fileID: 0}
+  PointValue: {fileID: 0}
+  itemsIn: []
+--- !u!1 &8609876666208883127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279753920904155714}
+  m_Layer: 0
+  m_Name: BookcaseView
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1279753920904155714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8609876666208883127}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.9023109, y: 0.16272536, z: 0.052758716}
+  m_LocalScale: {x: 0.19468129, y: 0.1946813, z: 0.35468176}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3136726392432950332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

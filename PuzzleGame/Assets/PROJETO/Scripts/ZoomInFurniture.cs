@@ -13,18 +13,14 @@ public class Furnitures : Interactable
     [Header("Itens menores no movel")]
     [SerializeField] GameObject[] itemsIn;
 
-    private void HideArrows()
-    {
-        GameData.IsInCenter = false;
-        Camera.main.GetComponent<CameraMove>().ChangeVisibleArrows(0);
-    }
     //sobreescreve a funcao OnInteract do script Interactable (pai)
     public override void OnInteract()
     {
         base.OnInteract();
+        //chama setceterstate como falso
+        CameraMove.Instance.SetCenterState(false);
 
-        HideArrows();
-
+        //joga a posicao da camera para os valores do transform do pointView do objeto
         CamTarget.transform.SetPositionAndRotation(PointValue.position, PointValue.rotation);
         //mesma coisa que:
         //CamTarget.transform.position = PointValue.position;

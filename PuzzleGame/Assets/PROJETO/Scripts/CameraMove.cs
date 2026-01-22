@@ -15,16 +15,50 @@ public class CameraMove : MonoBehaviour
 
     [SerializeField] GameObject camTarget;
 
+    [Header("Variaveis de Acesso Global")]
+    public static CameraMove Instance;
+    public bool IsInCenter { get; private set; } = false;
+    public static Vector3 CenterPointTarget { get; private set; } = new Vector3(0, 5, 0); //talvez usar pra mudar de fase (cubo)
+
     private float timer = 0;
+
+    //qualquer referencia a instancia sera diretamente ligada a esse script
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void FixedUpdate()
     {
         timer += Time.deltaTime;
+    }
+    public void SetCenterState(bool state)
+    {
+        //se o estado ja for esse, nao faz nada
+        if (IsInCenter == state) return;
+        //se for diferente, troca
+        IsInCenter = state;
+
+        //dependendo do estado, deve fazer algumas coisas
+
+        //pra ficar no centro, coloca a para o centro atual (CenterPointTarget) e zera a rotacao x e z, mantendo o y (direcao do olho)
+        if (IsInCenter == true)
+        {
+            camTarget.transform.SetPositionAndRotation(CenterPointTarget, Quaternion.Euler(0, camTarget.transform.eulerAngles.y, 0));
+            ChangeVisibleArrows(0);
+        }
+    }
+
+    //funcao pra qualquer outro script poder trocar o centro atual (cubo atual)
+    public void CurrentCenterPoint(Vector3 vector)
+    {
+        CenterPointTarget = vector;
     }
 
     public void ChangeVisibleArrows(float occasion)
     {
         //so consegue mexer nas setas SE a camera estiver no centro
-        if (GameData.IsInCenter)
+        if (IsInCenter)
         {
             if (occasion > 265 && occasion < 285)
             {
@@ -78,6 +112,17 @@ public class CameraMove : MonoBehaviour
             }
 
             timer = 0;
+        }
+    }
+
+    public void ReturnEsc()
+    {
+        if (IsInCenter == false)
+        {
+            //zera as rotacoes do x e z apenas, mantendo a "direcao do olhar" igual
+            SetCenterState(true);
+
+
         }
     }
 }
