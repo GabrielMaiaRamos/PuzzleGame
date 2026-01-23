@@ -26,4 +26,12 @@ public class PlayerInteracts : MonoBehaviour
             }
         }
     }
+    public void ReturnEsc()
+    {
+        if (CameraMove.Instance.IsInCenter == false)
+        {
+            //zera as rotacoes do x e z apenas, mantendo a "direcao do olhar" igual
+            CameraMove.Instance.SetCenterState(true);
+        }
+    }
 }

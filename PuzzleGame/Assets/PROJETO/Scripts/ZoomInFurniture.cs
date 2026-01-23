@@ -6,7 +6,6 @@ using UnityEngine;
 public class Furnitures : Interactable
 {
     [Header("Posicao da Camera")]
-    [SerializeField] GameObject MainCam;
     [SerializeField] GameObject CamTarget;
     [SerializeField] Transform PointValue;
 
@@ -17,13 +16,10 @@ public class Furnitures : Interactable
     public override void OnInteract()
     {
         base.OnInteract();
+        FadeTransition.Instance.FadeScreen();
         //chama setceterstate como falso
         CameraMove.Instance.SetCenterState(false);
-
         //joga a posicao da camera para os valores do transform do pointView do objeto
         CamTarget.transform.SetPositionAndRotation(PointValue.position, PointValue.rotation);
-        //mesma coisa que:
-        //CamTarget.transform.position = PointValue.position;
-        //CamTarget.transform.rotation = PointValue.rotation;
     }
 }
