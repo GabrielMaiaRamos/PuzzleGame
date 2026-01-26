@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class ObjetctRotate : MonoBehaviour
 {
+    //provavelmente vai ser descartado
     private bool open = false;
     public void DoorInteract(InputAction.CallbackContext context)
     {
