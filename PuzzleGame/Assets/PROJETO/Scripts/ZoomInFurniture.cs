@@ -19,6 +19,7 @@ public class Furnitures : Interactable
         FadeTransition.Instance.FadeScreen();
         //chama setceterstate como falso
         CameraMove.Instance.SetCenterState(false);
+        CameraMove.Instance.ChangeVisibleArrows(0);
         //joga a posicao da camera para os valores do transform do pointView do objeto
         CamTarget.transform.SetPositionAndRotation(PointValue.position, PointValue.rotation);
     }

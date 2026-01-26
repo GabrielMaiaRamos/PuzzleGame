@@ -17,8 +17,8 @@ public class CameraMove : MonoBehaviour
 
     [Header("Variaveis de Acesso Global")]
     public static CameraMove Instance;
-    public bool IsInCenter { get; private set; } = false;
-    public static Vector3 CenterPointTarget { get; private set; } = new Vector3(0, 5, 0); //talvez usar pra mudar de fase (cubo)
+    public bool IsInCenter { get; private set; } = true;
+    public static Vector3 CenterPointTarget { get; private set; } = new Vector3(-16, 5, 0); //talvez usar pra mudar de fase (cubo)
 
     private float timer = 0;
 
@@ -112,17 +112,6 @@ public class CameraMove : MonoBehaviour
             }
 
             timer = 0;
-        }
-    }
-
-    public void ReturnEsc()
-    {
-        if (IsInCenter == false)
-        {
-            //zera as rotacoes do x e z apenas, mantendo a "direcao do olhar" igual
-            SetCenterState(true);
-
-
         }
     }
 }
