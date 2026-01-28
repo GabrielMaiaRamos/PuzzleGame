@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3421991816395325560}
   - component: {fileID: 2551894376620859205}
   - component: {fileID: 8912075841758353551}
-  - component: {fileID: 8096725541753570867}
   - component: {fileID: 1079970028788148977}
   m_Layer: 0
   m_Name: Bookcase
@@ -1198,27 +1197,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!65 &8096725541753570867
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3137841527771257091}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.4922708, y: 0.6884565, z: 0.69714344}
-  m_Center: {x: 0.2538649, y: -0.0031113923, z: 0.0009925368}
 --- !u!114 &1079970028788148977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,7 +1210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Furnitures
   ObjectName: Boockcase
-  MainCam: {fileID: 0}
   CamTarget: {fileID: 0}
   PointValue: {fileID: 0}
   itemsIn: []

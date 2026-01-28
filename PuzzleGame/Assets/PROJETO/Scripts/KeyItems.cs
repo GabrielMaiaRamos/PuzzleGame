@@ -9,17 +9,11 @@ public class KeyItems : Interactable, IPointerClickHandler
     [SerializeField] bool Catchable;
     [SerializeField] bool PopUp;
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        OnInteract();
-    }
-
     public override void OnInteract()
     {
         base.OnInteract();
         if (Catchable)
         {
-            gameObject.SetActive(false);
             Destroy(gameObject);
         }
     }

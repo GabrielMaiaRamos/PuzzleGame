@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public string ObjectName;
     private Color original;
@@ -15,15 +15,17 @@ public class Interactable : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("apontei");
         rend.material.color = highlightColor;
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("sai");
         rend.material.color = original;
     }
     //uma funcao VIRTUAL significa que pode ser alterada por outros arquivos (filhos) usando override
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        OnInteract();
+    }
     public virtual void OnInteract()
     {
         Debug.Log("Interagiu com " + ObjectName);
